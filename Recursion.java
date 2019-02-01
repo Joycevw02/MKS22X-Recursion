@@ -7,7 +7,17 @@ public class Recursion{
 
     */
     public static double sqrt(double n, double tolerance){
-
+      return help(n,5.5,tolerance);
+    }
+    public static double help(double n, double guess, double tolerance){
+      //If guess squared is less than 1.000001 times n, return guess
+      if ((n *(1 + (tolerance / 100))) > (guess * guess)){
+        return guess;
+      }
+      //Else, return help with n and a modified guess value
+      else{
+        return help(n,(( n / guess + guess) / 2),tolerance);
+      }
     }
 
     /*Recursively find the n'th fibbonaci number in linear time
