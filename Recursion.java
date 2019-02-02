@@ -1,3 +1,4 @@
+import java.util.*;
 public class Recursion{
     /*You may write additional private methods */
 
@@ -40,8 +41,8 @@ public class Recursion{
       }
     }
     /*As Per classwork*/
-//    public static Arraylist<Integer> makeAllSums(){
-//    }
+   public static ArrayList<Integer> makeAllSums(int n){
+   }
     public static void main(String[] args){
       //System.out.println(sqrt(4.0,0.001));
       //System.out.println(fib(0));
