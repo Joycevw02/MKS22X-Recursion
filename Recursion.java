@@ -43,16 +43,25 @@ public class Recursion{
     /*As Per classwork*/
    public static ArrayList<Integer> makeAllSums(int n){
      ArrayList<Integer> ans = new ArrayList<Integer>();
-     sumHelper(n,0,ans);
+     sumHelperPositve(n,0,ans);
      return ans;
    }
-   private static void sumHelper(int n,int sum,ArrayList<Integer> list){
+   private static void sumHelperPositve(int n,int sum,ArrayList<Integer> list){
     if (n == 0){
       list.add(sum);
     }
     else{
-      sumHelper(n - 1, sum + n,list);
-      sumHelper(n - 1, sum, list);
+      sumHelperPositve(n - 1, sum + n,list);
+      sumHelperPositve(n - 1, sum, list);
+    }
+   }
+   private static void sumHelperNegative(int n,int sum,ArrayList<Integer> list){
+    if (n == 0){
+      list.add(sum);
+    }
+    else{
+      sumHelperNegative(n + 1, sum - n,list);
+      sumHelperNegative(n + 1, sum, list);
     }
    }
    public static void main(String[] args){
