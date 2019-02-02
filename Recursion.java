@@ -9,7 +9,7 @@ public class Recursion{
     public static double sqrt(double n, double tolerance){
       return help(n,5.5,tolerance);
     }
-    public static double help(double n, double guess, double tolerance){
+    private static double sqrthelp(double n, double guess, double tolerance){
       //If guess squared is less than 1.000001 times n, return guess
       if ((n *(1 + (tolerance / 100))) > (guess * guess)){
         return guess;
@@ -25,11 +25,13 @@ public class Recursion{
      *precondition: n is non-negative
      */
     public static int fib(int n){
-
+      return 1;
     }
-
+    private static int fibhelp(int n, int num){
+      
+    }
     /*As Per classwork*/
-    public static ArrayList<Integer> makeAllSums(){
+    public static Arraylist<Integer> makeAllSums(){
     }
 
 }
