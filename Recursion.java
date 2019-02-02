@@ -27,12 +27,16 @@ public class Recursion{
     public static int fib(int n){
       return fibhelp(n,0,1);
     }
-    private static int fibhelp(int n, int one, int two){
+    private static int fibhelp(int n, int ans, int prev){
+      //If n is 0, return ans
       if (n == 0){
-        return one;
+        return ans;
       }
+      //Else, return the fib help of n - 1 (counting down), the ans plus the
+      //previous (for the new ans for the next term), and the current answer as
+      //the new previous answer
       else{
-        return fibhelp(n - 1, one + two, one);
+        return fibhelp(n - 1, ans + prev, ans);
       }
     }
     /*As Per classwork*/
@@ -40,17 +44,17 @@ public class Recursion{
 //    }
     public static void main(String[] args){
       //System.out.println(sqrt(4.0,0.001));
-      System.out.println(fib(0));
-      System.out.println(fib(1));
-      System.out.println(fib(2));
-      System.out.println(fib(3));
-      System.out.println(fib(4));
-      System.out.println(fib(5));
-      System.out.println(fib(6));
-      System.out.println(fib(7));
-      System.out.println(fib(8));
-      System.out.println(fib(9));
-      System.out.println(fib(10));
+      //System.out.println(fib(0));
+      //System.out.println(fib(1));
+      //System.out.println(fib(2));
+      //System.out.println(fib(3));
+      //System.out.println(fib(4));
+      //System.out.println(fib(5));
+      //System.out.println(fib(6));
+      //System.out.println(fib(7));
+      //System.out.println(fib(8));
+      //System.out.println(fib(9));
+      //System.out.println(fib(10));
     }
 
 }
