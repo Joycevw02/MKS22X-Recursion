@@ -7,7 +7,7 @@ public class Recursion{
 
     */
     public static double sqrt(double n, double tolerance){
-      return help(n,5.5,tolerance);
+      return sqrthelp(n,5.5,tolerance);
     }
     private static double sqrthelp(double n, double guess, double tolerance){
       //If guess squared is less than 1.000001 times n, return guess
@@ -16,7 +16,7 @@ public class Recursion{
       }
       //Else, return help with n and a modified guess value
       else{
-        return help(n,(( n / guess + guess) / 2),tolerance);
+        return sqrthelp(n,(( n / guess + guess) / 2),tolerance);
       }
     }
 
@@ -25,13 +25,22 @@ public class Recursion{
      *precondition: n is non-negative
      */
     public static int fib(int n){
-      return 1;
+      return fibhelp(n,0);
     }
-    private static int fibhelp(int n, int num){
-      
+    private static int fibhelp(int n, int sum){
+      if (n <= 1){
+        return n;
+      }
+      else{
+        return fibhelp(n - 1, sum + n);
+      }
     }
     /*As Per classwork*/
-    public static Arraylist<Integer> makeAllSums(){
+//    public static Arraylist<Integer> makeAllSums(){
+//    }
+    public static void main(String[] args){
+      System.out.println(sqrt(4.0,0.001));
+      System.out.println(fib(2));
     }
 
 }
