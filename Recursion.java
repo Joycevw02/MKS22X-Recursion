@@ -43,22 +43,37 @@ public class Recursion{
     /*As Per classwork*/
    public static ArrayList<Integer> makeAllSums(int n){
      ArrayList<Integer> ans = new ArrayList<Integer>();
-     sumHelperPositve(n,0,ans);
+     //If n is positive or 0, call the helper function for positive numbers
+     if (n >= 0){
+       sumHelperPositve(n,0,ans);
+     }
+     //If n is negative, call the helper function for negative numbers
+     else{
+       sumHelperNegative(n,0,ans);
+     }
      return ans;
    }
+   //Helper functions edit the array list
    private static void sumHelperPositve(int n,int sum,ArrayList<Integer> list){
+    //Base if : if n is 0, the sum is the greatest it will ever be for this run,
+    //so you add it to the list
     if (n == 0){
       list.add(sum);
     }
+    //Else, call the function twice, once adding the number and once not
     else{
       sumHelperPositve(n - 1, sum + n,list);
       sumHelperPositve(n - 1, sum, list);
     }
    }
    private static void sumHelperNegative(int n,int sum,ArrayList<Integer> list){
+     //Base if : if n is 0, the sum is the least it will ever be for this run,
+     //so you add it to the list
     if (n == 0){
-      list.add(sum);
+      list.add(-sum);
     }
+    //Else, call the function twice, once subtracting the value (same as adding
+    //a negative) and once not doing anything
     else{
       sumHelperNegative(n + 1, sum - n,list);
       sumHelperNegative(n + 1, sum, list);
@@ -77,7 +92,7 @@ public class Recursion{
       //System.out.println(fib(8));
       //System.out.println(fib(9));
       //System.out.println(fib(10));
-      System.out.println(makeAllSums(3));
+      //System.out.println(makeAllSums(3));
       //System.out.println(makeAllSums(-3));
     }
 
