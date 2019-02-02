@@ -28,11 +28,11 @@ public class Recursion{
       return fibhelp(n,0,1);
     }
     private static int fibhelp(int n, int one, int two){
-      if (n <= 1){
-        return two;
+      if (n == 0){
+        return one;
       }
       else{
-        return fibhelp(n - 1, one, one + two);
+        return fibhelp(n - 1, one + two, one);
       }
     }
     /*As Per classwork*/
@@ -40,7 +40,17 @@ public class Recursion{
 //    }
     public static void main(String[] args){
       //System.out.println(sqrt(4.0,0.001));
+      System.out.println(fib(0));
+      System.out.println(fib(1));
+      System.out.println(fib(2));
       System.out.println(fib(3));
+      System.out.println(fib(4));
+      System.out.println(fib(5));
+      System.out.println(fib(6));
+      System.out.println(fib(7));
+      System.out.println(fib(8));
+      System.out.println(fib(9));
+      System.out.println(fib(10));
     }
 
 }
