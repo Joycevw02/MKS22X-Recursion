@@ -25,22 +25,22 @@ public class Recursion{
      *precondition: n is non-negative
      */
     public static int fib(int n){
-      return fibhelp(n,0);
+      return fibhelp(n,0,1);
     }
-    private static int fibhelp(int n, int sum){
+    private static int fibhelp(int n, int one, int two){
       if (n <= 1){
-        return n;
+        return two;
       }
       else{
-        return fibhelp(n - 1, sum + n);
+        return fibhelp(n - 1, one, one + two);
       }
     }
     /*As Per classwork*/
 //    public static Arraylist<Integer> makeAllSums(){
 //    }
     public static void main(String[] args){
-      System.out.println(sqrt(4.0,0.001));
-      System.out.println(fib(2));
+      //System.out.println(sqrt(4.0,0.001));
+      System.out.println(fib(3));
     }
 
 }
