@@ -43,10 +43,17 @@ public class Recursion{
     /*As Per classwork*/
    public static ArrayList<Integer> makeAllSums(int n){
      ArrayList<Integer> ans = new ArrayList<Integer>();
+     sumHelper(n,0,ans);
      return ans;
    }
    private static void sumHelper(int n,int sum,ArrayList<Integer> list){
-     
+    if (n == 0){
+      list.add(sum);
+    }
+    else{
+      sumHelper(n - 1, sum + n,list);
+      sumHelper(n - 1, sum, list);
+    }
    }
    public static void main(String[] args){
       //System.out.println(sqrt(4.0,0.001));
@@ -61,6 +68,8 @@ public class Recursion{
       //System.out.println(fib(8));
       //System.out.println(fib(9));
       //System.out.println(fib(10));
+      System.out.println(makeAllSums(3));
+      //System.out.println(makeAllSums(-3));
     }
 
 }
