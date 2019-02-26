@@ -74,7 +74,7 @@ public class Driver{
     for (int i = 0; i < 6; i ++){
       testFib(i);
     }
-    for (int i = 0; i < 5; i ++){
+    for (int i = 1; i < 5; i ++){
       testSqrt(i);
     }
   }

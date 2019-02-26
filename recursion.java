@@ -8,7 +8,12 @@ public class recursion{
 
     */
     public static double sqrt(double n, double tolerance){
-      return sqrthelp(n,5.5,tolerance);
+      if (n == 0.0){
+        return 0.0;
+      }
+      else{
+        return sqrthelp(n,5.5,tolerance);
+      }
     }
     private static double sqrthelp(double n, double guess, double tolerance){
       //If guess squared is less than 1.000001 times n, return guess
